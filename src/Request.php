@@ -32,7 +32,7 @@ class Request
      * @var mixed null
      */
     public $data = null;
-    public string $xmlRootNode = 'root';
+    public ?string $xmlRootNode = 'root';
     public string $method = self::METHOD_GET;
     public string $url;
     public array $query = [];
