@@ -60,7 +60,7 @@ class Request
         return $this;
     }
 
-    protected function setMethod($method): Request
+    public function setMethod($method): Request
     {
         $this->method = strtoupper($method);
 
@@ -85,7 +85,7 @@ class Request
      * @param $url string|array - Can be [$url, $params] Example: ['some_uri/{product_id}', ['product_id' => 100]],
      * @return Response
      */
-    protected function send(string $url, $urlReplaceParams = []): Response
+    public function send(string $url, $urlReplaceParams = []): Response
     {
         $this->setUrl($url, $urlReplaceParams);
 
