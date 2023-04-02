@@ -26,7 +26,7 @@ class Request
     const TYPE_XML = 'xml';
     const TYPE_PLAIN = 'plain';
 
-    public string $type;
+    public string $type = self::TYPE_PLAIN;
     public array $headers = [];
     /**
      * @var mixed null
