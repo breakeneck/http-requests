@@ -1,0 +1,22 @@
+{
+    "name": "breakeneck/http",
+    "description": "This is simple, lightweight and powerful http client, based on curl and file_get_content transport",
+    "type": "library",
+    "license": "MIT License",
+    "autoload": {
+        "psr-4": {
+            "Breakeneck\\Http\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yuri Datsenko",
+            "email": "breakeneck@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "php": ">=7.4",
+        "digitickets/lalit": "^3.3"
+    }
+}
