@@ -108,7 +108,7 @@ class Request
             case self::TYPE_XML:
                 $this->addHeaders(self::XML_HEADER);
                 if (! in_array($this->method, self::METHODS_WITHOUT_BODY) && $this->data) {
-                    $this->data = Array2XML::createXML($this->xmlRootNode, $this->data);
+                    $this->data = Array2XML::createXML($this->xmlRootNode, $this->data)->saveXML();
                 }
                 break;
         }
