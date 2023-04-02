@@ -2,7 +2,7 @@
     "name": "breakeneck/http",
     "description": "This is simple, lightweight and powerful http client, based on curl and file_get_content transport",
     "type": "library",
-    "license": "MIT License",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Breakeneck\\Http\\": "src/"
