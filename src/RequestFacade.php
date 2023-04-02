@@ -25,39 +25,15 @@ trait RequestFacade
         }
         return $this;
     }
-    public function get(string $url, $urlReplaceParams = []): Response
-    {
-        return $this->setMethod(Request::METHOD_GET)->send($url, $urlReplaceParams);
-    }
 
-    public function post(string $url, $urlReplaceParams = []): Response
-    {
-        return $this->setMethod(Request::METHOD_POST)->send($url, $urlReplaceParams);
-    }
-
-    public function put(string $url, $urlReplaceParams = []): Response
-    {
-        return $this->setMethod(Request::METHOD_PUT)->send($url, $urlReplaceParams);
-    }
-
-    public function delete(string $url, $urlReplaceParams = []): Response
-    {
-        return $this->setMethod(Request::METHOD_DELETE)->send($url, $urlReplaceParams);
-    }
-
-    public function patch(string $url, $urlReplaceParams = []): Response
-    {
-        return $this->setMethod(Request::METHOD_PATCH)->send($url, $urlReplaceParams);
-    }
-
-    public function xml($rootXmlNode = null)
+    public function xml($rootXmlNode = null): Request
     {
         $this->xmlRootNode = $rootXmlNode;
         $this->setType(Request::TYPE_XML);
         return $this;
     }
 
-    public function json()
+    public function json(): Request
     {
         $this->setType(Request::TYPE_JSON);
         return $this;
@@ -84,5 +60,32 @@ trait RequestFacade
     {
         $this->addHeaders(['Authorization' => 'Basic ' . base64_encode("$username:$password")]);
         return $this;
+    }
+
+
+
+    public function get(string $url, $urlReplaceParams = []): Response
+    {
+        return $this->setMethod(Request::METHOD_GET)->send($url, $urlReplaceParams);
+    }
+
+    public function post(string $url, $urlReplaceParams = []): Response
+    {
+        return $this->setMethod(Request::METHOD_POST)->send($url, $urlReplaceParams);
+    }
+
+    public function put(string $url, $urlReplaceParams = []): Response
+    {
+        return $this->setMethod(Request::METHOD_PUT)->send($url, $urlReplaceParams);
+    }
+
+    public function delete(string $url, $urlReplaceParams = []): Response
+    {
+        return $this->setMethod(Request::METHOD_DELETE)->send($url, $urlReplaceParams);
+    }
+
+    public function patch(string $url, $urlReplaceParams = []): Response
+    {
+        return $this->setMethod(Request::METHOD_PATCH)->send($url, $urlReplaceParams);
     }
 }
