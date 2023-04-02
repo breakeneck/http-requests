@@ -79,4 +79,10 @@ trait RequestFacade
     {
         return $this->headers;
     }
+
+    public function baseAuth($username, $password): Request
+    {
+        $this->addHeaders(['Authorization' => 'Basic ' . base64_encode("$username:$password")]);
+        return $this;
+    }
 }
