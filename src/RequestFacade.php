@@ -26,16 +26,18 @@ trait RequestFacade
         return $this;
     }
 
-    public function xml($rootXmlNode = null): Request
+    public function xml($rootXmlNode = null, $data = []): Request
     {
         $this->xmlRootNode = $rootXmlNode;
         $this->setType(Request::TYPE_XML);
+        $this->setData($data);
         return $this;
     }
 
-    public function json(): Request
+    public function json($data = []): Request
     {
         $this->setType(Request::TYPE_JSON);
+        $this->setData($data);
         return $this;
     }
 

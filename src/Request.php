@@ -39,9 +39,8 @@ class Request
     public ?int $timeout = null;
     protected ?iTransport $transport = null;
 
-    public function __construct($type = self::TYPE_PLAIN)
+    public function __construct()
     {
-        $this->setType($type);
     }
 
     protected function setTransport($transportClass = self::TRANSPORT_STREAM, $transportOpts = [])
